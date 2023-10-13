@@ -26,7 +26,7 @@ git tag -d edge
 git tag -f ${PRERELEASE_TAG}
 goreleaser release \
     --clean \
-    --skip-validate \
+    --skip=validate \
     -f .goreleaser.pre.yml
 
 # Delete existing assets from the edge prerelease on GitHub
