@@ -4,12 +4,12 @@ name: test
 on:
   push:
     branches:
-      - main
+      - datadog
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
   pull_request:
     branches:
-      - main
+      - datadog
 
 jobs:
   test:
@@ -35,12 +35,6 @@ jobs:
 
       - name: Test
         run: make test
-
-      - name: Publish coverage to coveralls.io
-        uses: shogo82148/actions-goveralls@v1
-        if: ${{ matrix.os == 'ubuntu-22.04' }}
-        with:
-          path-to-profile: coverage.out
 
       - name: Build
         run: make build

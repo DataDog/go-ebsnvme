@@ -1,7 +1,7 @@
 NAME          := go-ebsnvme
 FILES         := $(shell git ls-files */*.go)
 COVERAGE_FILE := coverage.out
-REPOSITORY    := mvisonneau/$(NAME)
+REPOSITORY    := datadog/$(NAME)
 .DEFAULT_GOAL := help
 
 .PHONY: fmt
